@@ -13,7 +13,7 @@ public class Fish {
         weight = w;
     }
 
-    public void fry() {
+     void fry() {
         System.out.println("Frying fssssssssssh");
     }
 

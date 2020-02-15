@@ -102,19 +102,23 @@ public class BinaryTree<T> {
 
     /* Returns the height of the tree. */
     public int height() {
-        // TODO
-        return -1;
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(root.left.depth(), root.right.depth());
     }
 
     /* Returns true if the tree's left and right children are the same height
        and are themselves completely balanced. */
     public boolean isCompletelyBalanced() {
-        // TODO
-        return false;
+        if (root == null) {
+            return true;
+        }
+        return root.left.depth() == root.right.depth();
     }
 
     public static BinaryTree<Integer> fibTree(int N) {
-        // TODO
+
         return null;
     }
 
@@ -134,6 +138,22 @@ public class BinaryTree<T> {
             item = obj;
             this.left = left;
             this.right = right;
+        }
+
+        private int depth() {
+            if (this.item == null) {
+                return 0;
+            }
+            if (left == null && right == null) {
+                return 1;
+            }
+            if (left == null) {
+                return 1 + right.depth();
+            }
+            if (right == null) {
+                return 1 + left.depth();
+            }
+            return 1 + Math.max(left.depth(), right.depth());
         }
     }
 }

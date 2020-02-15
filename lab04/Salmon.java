@@ -19,7 +19,8 @@ public class Salmon extends Fish {
     }
     */
 
-    public void fry() {
+    @Override
+     void fry() {
         System.out.println("Frying sssssssssalmon");
     }
 

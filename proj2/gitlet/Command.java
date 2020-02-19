@@ -10,11 +10,13 @@ import java.io.File;
 public class Command {
     public static void init() {
         String currentDir = System.getProperty("user.dir");
-        File gitDir = new File(currentDir + "/gitDir");
+        File gitDir = new File(currentDir + "/.gitDir");
         if (gitDir.exists()) {
             System.out.println("A gitlet version-control system " +
                     "already exists in the current directory");
         } else {
+            new File(currentDir + "/.gitDir").mkdir();
+            new File(currentDir + "/.gitDir/objects").mkdir();
 
         }
     }

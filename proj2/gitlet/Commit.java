@@ -14,6 +14,13 @@ public class Commit implements Serializable {
     private List<Blob> blobs;
     private String parent;
     private LocalDateTime timestamp;
-    private String logMessage;
+    private String message;
+
+    public Commit(List<Blob> blobs, String parent, LocalDateTime timestamp, String message) {
+        this.blobs = blobs;
+        this.parent = parent;
+        this.timestamp = LocalDateTime.now();
+        this.message = message;
+    }
 
 }

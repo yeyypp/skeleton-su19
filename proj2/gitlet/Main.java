@@ -10,8 +10,7 @@ public class Main {
     /* Usage: java gitlet.Main ARGS, where ARGS contains
        <COMMAND> <OPERAND> .... */
     public static void main(String... args) {
-        File dir = new File(System.getProperty("user.dir") + "/.gitlet");
-        System.out.println(dir.exists());
+
     }
 
 

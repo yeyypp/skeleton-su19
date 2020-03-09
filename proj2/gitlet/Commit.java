@@ -3,6 +3,7 @@ package gitlet;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -11,16 +12,18 @@ import java.util.List;
  */
 
 public class Commit implements Serializable {
-    private List<Blob> blobs;
-    private String parent;
+    private final String parent;
     private LocalDateTime timestamp;
-    private String message;
+    private final String message;
+    private HashMap<String, String> contents = new HashMap<>();
 
-    public Commit(List<Blob> blobs, String parent, LocalDateTime timestamp, String message) {
-        this.blobs = blobs;
+
+    public Commit(String parent, String message) {
         this.parent = parent;
         this.timestamp = LocalDateTime.now();
         this.message = message;
     }
+
+
 
 }
